@@ -1,0 +1,514 @@
+/* style.css */
+
+/* style.css */
+
+/* Base Styles (tetap sama) */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e6f2ff;
+  color: #003366;
+}
+
+header {
+  background-color: #007acc;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  flex-grow: 1;
+}
+
+nav {
+  margin-top: 0;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("Image/bg-lpage.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.btn {
+  background-color: #005b99;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #004080;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f0f8ff;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.product {
+  border: 1px solid #99c2ff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product h3 {
+  margin-top: 0;
+}
+
+.product-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(0, 51, 102, 0.9);
+  color: white;
+  box-sizing: border-box;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.product-info p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.product:hover .product-info {
+  transform: translateY(0);
+}
+
+.product:hover img {
+  transform: scale(1.05);
+}
+
+.product:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.benefits {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.benefit {
+  max-width: 200px;
+}
+
+footer {
+  background-color: #007acc;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: white;
+}
+
+/* --- Carousel Testimoni --- */
+.testimoni-section {
+  padding: 60px 20px;
+  position: relative; /* Ini adalah konteks untuk posisi absolute tombol */
+}
+
+.carousel-container {
+  max-width: 700px; /* Lebar maksimum kontainer carousel */
+  margin: 0 auto; /* Ini yang akan memusatkan kotak testimoninya */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 30px;
+  /* Hapus margin-left dan margin-right di sini karena sudah ditangani oleh max-width dan margin: 0 auto */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.testimoni {
+  font-style: italic;
+  color: #004080;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.testimoni-author {
+  font-weight: bold;
+  color: #003366;
+  margin-top: 0;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 51, 102, 0.7);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1.5em;
+  border-radius: 50%;
+  outline: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background-color: #003366;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+  /* Atur posisi relatif terhadap testimoni-section */
+  left: calc(50% - 350px - 20px); /* 50% dari section, kurangi setengah max-width container, lalu kurangi jarak keluar */
+  /* Contoh: 50% - (700px / 2) - 20px = 50% - 350px - 20px */
+}
+
+.carousel-btn.next {
+  /* Atur posisi relatif terhadap testimoni-section */
+  right: calc(50% - 350px - 20px); /* 50% dari section, kurangi setengah max-width container, lalu kurangi jarak keluar */
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  header h1 {
+    margin-bottom: 10px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    margin: 5px 10px;
+    font-size: 0.95em;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* Sections in general */
+  .section {
+    padding: 30px 15px;
+  }
+
+  /* Products Section */
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  /* Benefits Section */
+  .benefits {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  /* Carousel Testimonials */
+  .carousel-container {
+    max-width: 90%; /* Sesuaikan lebar container carousel */
+    padding: 20px;
+    margin-left: auto; /* Pastikan tetap di tengah */
+    margin-right: auto; /* Pastikan tetap di tengah */
+  }
+
+  .carousel-btn.prev {
+    /* Perhitungan ulang untuk mobile */
+    left: 5px; /* Atau sesuaikan agar tidak terlalu jauh keluar */
+  }
+  .carousel-btn.next {
+    /* Perhitungan ulang untuk mobile */
+    right: 5px; /* Atau sesuaikan agar tidak terlalu jauh keluar */
+  }
+
+  /* Footer */
+  footer p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Header */
+  nav a {
+    margin: 5px 8px;
+    font-size: 0.9em;
+  }
+
+  /* Hero Section */
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  /* Products and Benefits */
+  .product,
+  .benefit {
+    width: 100%;
+    max-width: none;
+    padding: 15px;
+  }
+
+  /* Testimonial specific for smaller mobile */
+  .carousel-container {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .testimoni {
+    font-size: 1em;
+  }
+
+  .carousel-btn {
+    padding: 8px 10px;
+    font-size: 1.2em;
+  }
+
+  .carousel-btn.prev {
+    left: 0px; /* Lebih dekat ke tepi layar di mobile terkecil */
+  }
+  .carousel-btn.next {
+    right: 0px; /* Lebih dekat ke tepi layar di mobile terkecil */
+  }
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Untuk layar dengan lebar maksimum 768px (umumnya tablet dan mobile landscape) */
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    flex-direction: column; /* Ubah tata letak header menjadi kolom */
+    padding: 15px;
+  }
+
+  header h1 {
+    margin-bottom: 10px; /* Tambahkan sedikit jarak di bawah judul */
+  }
+
+  nav {
+    display: flex; /* Jadikan tautan navigasi inline di mobile */
+    justify-content: center; /* Pusatkan tautan navigasi */
+    width: 100%; /* Lebarkan navigasi agar rata tengah */
+    flex-wrap: wrap; /* Izinkan tautan untuk wrap jika terlalu banyak */
+  }
+
+  nav a {
+    margin: 5px 10px; /* Kurangi margin antar tautan */
+    font-size: 0.95em;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 40px 15px; /* Kurangi padding di mobile */
+  }
+
+  .hero h2 {
+    font-size: 26px; /* Kurangi ukuran font judul hero */
+  }
+
+  .hero p {
+    font-size: 16px; /* Kurangi ukuran font paragraf hero */
+  }
+
+  /* Sections in general */
+  .section {
+    padding: 30px 15px; /* Kurangi padding untuk semua section */
+  }
+
+  /* Products Section */
+  .products {
+    flex-direction: column; /* Jadikan produk tampil satu per satu vertikal */
+    align-items: center; /* Pusatkan produk */
+  }
+
+  .product {
+    width: 90%; /* Buat produk mengambil 90% lebar layar */
+    max-width: 300px; /* Batasi lebar maksimum agar tidak terlalu besar di tablet */
+  }
+
+  /* Benefits Section */
+  .benefits {
+    flex-direction: column; /* Jadikan benefit tampil satu per satu vertikal */
+    align-items: center; /* Pusatkan benefit */
+  }
+
+  .benefit {
+    max-width: 90%; /* Buat benefit mengambil 90% lebar layar */
+    margin-bottom: 20px; /* Tambahkan jarak antar benefit */
+  }
+
+  /* Carousel Testimonials */
+  .carousel-container {
+    max-width: 90%; /* Sesuaikan lebar container carousel */
+    padding: 20px;
+    margin-left: auto; /* Pusatkan container */
+    margin-right: auto; /* Pusatkan container */
+  }
+
+  .carousel-btn.prev {
+    left: 5px; /* Sesuaikan posisi tombol di layar kecil */
+  }
+  .carousel-btn.next {
+    right: 5px; /* Sesuaikan posisi tombol di layar kecil */
+  }
+
+  /* Footer */
+  footer p {
+    font-size: 12px; /* Kecilkan font footer */
+  }
+}
+
+/* Untuk layar dengan lebar maksimum 480px (umumnya mobile portrait) */
+@media (max-width: 480px) {
+  /* Header */
+  nav a {
+    margin: 5px 8px; /* Margin lebih kecil untuk tautan navigasi */
+    font-size: 0.9em;
+  }
+
+  /* Hero Section */
+  .hero h2 {
+    font-size: 22px; /* Lebih kecil lagi untuk judul hero */
+  }
+
+  .hero p {
+    font-size: 15px; /* Lebih kecil lagi untuk paragraf hero */
+  }
+
+  .btn {
+    padding: 10px 20px; /* Padding tombol lebih kecil */
+    font-size: 0.9em;
+  }
+
+  /* Products and Benefits */
+  .product,
+  .benefit {
+    width: 100%; /* Ambil lebar penuh */
+    max-width: none; /* Hapus batasan max-width */
+    padding: 15px; /* Kurangi padding produk */
+  }
+
+  /* Testimonial specific for smaller mobile */
+  .carousel-container {
+    padding: 15px; /* Kurangi padding container carousel */
+    border-radius: 8px;
+  }
+
+  .testimoni {
+    font-size: 1em; /* Ukuran font testimonial */
+  }
+
+  .carousel-btn {
+    padding: 8px 10px; /* Ukuran tombol carousel lebih kecil */
+    font-size: 1.2em;
+  }
+}
